@@ -1994,7 +1994,7 @@ fn classify_connect_error(e: &anyhow::Error) -> String {
         "no Bluetooth adapter found — is Bluetooth hardware present?".into()
     } else if low.contains("bluetooth") || low.contains("permit") || low.contains("scan") {
         "couldn't start a Bluetooth scan — is Bluetooth on and permitted?".into()
-    } else if low.contains("no claude buddy found") {
+    } else if low.contains("no agent buddy found") {
         "no buddy found nearby — make sure it's powered on and awake".into()
     } else {
         s
@@ -2037,7 +2037,7 @@ async fn ble_manager_loop(mut preferred: Option<String>, ev_tx: mpsc::Sender<Eve
                 // when `_sleep_guard` drops as we leave this match arm on
                 // disconnect. The display still sleeps normally.
                 let _sleep_guard =
-                    crate::power::PowerAssertion::prevent_idle_sleep("Claude buddy connected");
+                    crate::power::PowerAssertion::prevent_idle_sleep("Agent Buddy connected");
                 if ev_tx
                     .send(Event::Connected(Link::Ble(link.clone())))
                     .await

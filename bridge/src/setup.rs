@@ -1499,7 +1499,7 @@ fn install_daemon_service(exe: &str) -> Result<String> {
     // (e.g. BlueZ not yet up) doesn't tight-loop into systemd's StartLimit and
     // then stay dead.
     let body = format!(
-        "[Unit]\nDescription=Claude buddy bridge daemon\n\n\
+        "[Unit]\nDescription=Agent Buddy bridge daemon\n\n\
          [Service]\nExecStart={exe} daemon\nRestart=always\nRestartSec=2\n\n\
          [Install]\nWantedBy=default.target\n"
     );

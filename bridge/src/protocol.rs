@@ -12,7 +12,7 @@
 use serde::{Deserialize, Serialize};
 
 /// Nordic UART Service UUIDs. The firmware advertises this service and the
-/// device picker filters on a name starting with `Claude`.
+/// device picker filters on a name starting with `AgentBuddy`.
 pub mod nus {
     use uuid::{uuid, Uuid};
     pub const SERVICE: Uuid = uuid!("6e400001-b5a3-f393-e0a9-e50e24dcca9e");
@@ -23,7 +23,9 @@ pub mod nus {
 }
 
 /// Name prefix the firmware advertises with, used to filter the scan.
-pub const DEVICE_NAME_PREFIX: &str = "Claude";
+/// Kept in sync with `btName` in `firmware/src/main.cpp` (the device advertises
+/// as `AgentBuddy-XXXX`).
+pub const DEVICE_NAME_PREFIX: &str = "AgentBuddy";
 
 /// Hard ceiling, in **bytes**, on any single wire line we send the device.
 ///

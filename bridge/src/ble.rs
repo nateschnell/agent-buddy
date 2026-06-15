@@ -107,7 +107,7 @@ pub fn classify_error(err: &anyhow::Error) -> ConnectErrorKind {
         || t.contains("denied")
     {
         ConnectErrorKind::NotPermitted
-    } else if t.contains("no claude buddy found") {
+    } else if t.contains("no agent buddy found") {
         ConnectErrorKind::NotFound
     } else {
         ConnectErrorKind::Other
@@ -156,7 +156,7 @@ impl BleLink {
     ) -> Result<(BleLink, mpsc::Receiver<String>, String)> {
         let adapter = first_adapter().await?;
 
-        info!("scanning for a Claude buddy…");
+        info!("scanning for an Agent Buddy…");
         adapter
             .start_scan(ScanFilter {
                 services: vec![nus::SERVICE],
@@ -177,7 +177,7 @@ impl BleLink {
             .ok()
             .flatten()
             .and_then(|p| p.local_name)
-            .unwrap_or_else(|| "Claude buddy".into());
+            .unwrap_or_else(|| "Agent Buddy".into());
         info!("connecting to {name} ({})…", peripheral.id());
 
         // Bound the whole connect→discover→subscribe phase. A wedged connect
@@ -356,7 +356,7 @@ async fn discover(
             return Err(ConnectError {
                 kind: ConnectErrorKind::NotFound,
                 source: anyhow!(
-                    "no Claude buddy found within {scan_secs}s (is it awake and is Bluetooth on?)"
+                    "no Agent Buddy found within {scan_secs}s (is it awake and is Bluetooth on?)"
                 ),
             }
             .into());

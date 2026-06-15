@@ -432,7 +432,7 @@ async fn send_admin_streaming(
 async fn pair() -> Result<()> {
     use protocol::{Heartbeat, OutboundCmd, TimeSync};
     let config = state::Config::load()?;
-    println!("Scanning for a Claude buddy (up to 12s)…");
+    println!("Scanning for an Agent Buddy (up to 12s)…");
     let (link, mut lines, _id) =
         ble::BleLink::connect(config.preferred_device.as_deref(), 12).await?;
 
@@ -577,7 +577,7 @@ async fn wifi(ssid: Option<String>, pass: Option<String>) -> Result<()> {
     let DeviceCommand::Wifi { ssid, pass } = command else {
         unreachable!("wifi() only ever builds DeviceCommand::Wifi");
     };
-    println!("Scanning for a Claude buddy (up to 12s)…");
+    println!("Scanning for an Agent Buddy (up to 12s)…");
     let config = state::Config::load()?;
     let (link, _lines, _id) = ble::BleLink::connect(config.preferred_device.as_deref(), 12).await?;
     link.send(&OutboundCmd::Wifi {
