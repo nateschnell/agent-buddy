@@ -2,7 +2,7 @@
   This is the PUBLIC-FACING README for nateschnell/agent-buddy.
   The public repo owns its own README (it is NOT overwritten by the release
   mirror), so edit it there directly. Replace the asset placeholders below
-  (logo, hero GIF/screenshot) before publishing — see the <!-- ASSET --> notes.
+  (logo, hero GIF/screenshot) before publishing — see the ASSET notes below.
 -->
 
 <!-- ASSET: add a 128px logo at assets/logo.png, then uncomment the block below.
@@ -25,13 +25,9 @@
   <a href="https://github.com/nateschnell/agent-buddy/stargazers"><img src="https://img.shields.io/github/stars/nateschnell/agent-buddy?style=flat&logo=github&color=yellow" alt="Stars"></a>
 </p>
 
-<!-- ASSET: add a hero GIF/screenshot at assets/hero.gif (the device reacting to a
-     live session: idle → busy → approval → celebrate). A still PNG of the device +
-     the desktop app side by side also works for v1. Then uncomment the block below.
 <p align="center">
-  <img src="assets/hero.gif" alt="Agent Buddy — a touchscreen desk companion that reacts to your AI coding agent in real time, showing live session telemetry and surfacing tool approvals.">
+  <img src="assets/hero-dashboard.png" width="560" alt="Agent Buddy — a touchscreen desk companion that reacts to your AI coding agent in real time, showing live session telemetry (running and waiting agents, tokens used today, active sessions) and surfacing tool approvals.">
 </p>
--->
 
 Agent Buddy turns the invisible work your AI coding agent does into something you
 can *see* on your desk. A small background daemon on your machine listens to your
@@ -146,6 +142,12 @@ agent-buddy uninstall          # macOS / Linux / Windows
 install did and leaves your device and its firmware alone.
 
 ## The hardware
+
+<p align="center">
+  <img src="assets/device-clock.png" width="48%" alt="Agent Buddy device showing a pixel-art buddy in a hardhat above a clock face — the ambient at-rest view.">
+  &nbsp;
+  <img src="assets/device-thinking.png" width="48%" alt="Agent Buddy device showing the buddy with a thinking speech bubble above the clock — reacting live to the agent working.">
+</p>
 
 The Agent Buddy device is a compact ESP32-S3 touchscreen companion — a
 capacitive-touch landscape display with an RGB LED that sits on your desk and
