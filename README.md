@@ -13,9 +13,11 @@
 <h1 align="center">Agent Buddy</h1>
 <p align="center">
   <b>A little desk companion for your AI coding agents.</b><br>
-  Watch what Claude Code (and a dozen other agents) is doing — live — on a tiny
-  touchscreen on your desk. Approve tool calls with a tap, glance at tokens and
-  context, and let the buddy celebrate when a long task finishes.
+  Watch what Claude Code (and a dozen other agents) is doing — live — as an
+  animated buddy <b>right on your desktop, no hardware required</b>. See when it's
+  thinking, running tools, or waiting on you, and let the buddy celebrate when a
+  long task finishes. Add the optional touchscreen device for the full on-desk
+  experience.
 </p>
 
 <p align="center">
@@ -30,12 +32,18 @@
 </p>
 
 Agent Buddy turns the invisible work your AI coding agent does into something you
-can *see* on your desk. A small background daemon on your machine listens to your
-agent's activity through its hook system and streams it — over Bluetooth — to a
-companion device that shows live telemetry (tokens, context usage, what the agent
-is doing right now) and pops tool-approval prompts you can answer with a tap.
-Start a long task, walk away, and come back when the buddy lights up to tell you
-it's done — or needs you.
+can *see*. A small background daemon on your machine listens to your agent's
+activity through its hook system and brings a little buddy to life — **as an
+animated character right on your desktop, with no hardware needed.** It reacts in
+real time to what your agent is doing: idle, thinking, running tools, waiting on
+you, or done. Start a long task, walk away, and glance over when the buddy
+celebrates to tell you it's finished — or needs you.
+
+**The free desktop app is the whole product on its own.** Want a physical
+presence on your desk too? The *optional* Agent Buddy hardware — a tiny
+touchscreen — adds a full two-column telemetry dashboard, tap-to-approve tool
+calls, and an ambient RGB glow you can read from across the room. The same daemon
+drives both; the device just makes it tangible.
 
 **This repository is the open-source software side of Agent Buddy:** the
 cross-platform desktop app and the `agent-buddy` daemon that bridge your agents to
@@ -45,10 +53,22 @@ read exactly what it does. (The device firmware is closed-source and lives in a
 separate repository; you don't need it to use, audit, or contribute to anything
 here.)
 
-> Works on **macOS**, **Windows**, and **Linux**. Requires the Agent Buddy
-> hardware device for the full on-desk experience.
+> Works on **macOS**, **Windows**, and **Linux** — **no hardware required**. The
+> optional Agent Buddy device adds the full on-desk experience.
 
 ## Features
+
+### Desktop buddy — no hardware needed
+A floating, animated character lives on your desktop and reacts to your agent in
+real time — thinking, running tools, celebrating a finished task, or dozing off
+when idle. It's a frameless, always-on-top window you can drag anywhere and toggle
+from the app's tray menu or Settings.
+
+- **The free desktop app is fully useful on its own** — install it and you have a
+  working buddy in seconds, no device to buy or pair
+- **Customizable** — pick the character / animation pack and palette
+- **The same engine drives the optional hardware device**, so you can start free
+  and add the physical display later
 
 ### Multi-agent support
 One daemon tracks every supported agent at once, each session resolved
@@ -111,7 +131,8 @@ and the device firmware images:
 - **Linux** — `.AppImage`
 
 Open it and the app self-installs the background service and your Claude Code
-hooks on first run. Then pair your buddy and start a session — it comes to life.
+hooks on first run. Start a session and the desktop buddy comes to life right
+away — no device needed. Got the optional hardware? Pair it and it lights up too.
 
 Prefer the command line? One-line installers:
 
@@ -129,8 +150,9 @@ irm https://raw.githubusercontent.com/nateschnell/agent-buddy/main/install.ps1 |
 > [`install.sh`](install.sh) and [`install.ps1`](install.ps1) are short and in
 > this repo.
 
-**Requirements:** [Claude Code](https://claude.com/claude-code) (or another
-supported agent) installed, a machine with Bluetooth, and an Agent Buddy device.
+**Requirements:** just [Claude Code](https://claude.com/claude-code) (or another
+supported agent) installed — that's all the desktop buddy needs. The optional
+Agent Buddy hardware device additionally needs a machine with Bluetooth.
 
 ### Uninstall
 
